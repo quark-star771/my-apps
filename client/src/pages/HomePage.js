@@ -39,6 +39,12 @@ const HomePage = () => {
           >
             Avatar Page
           </button>
+          <button
+            onClick={() => navigateTo('/calc')}
+            className="w-full bg-amber-700 text-white py-3 px-5 rounded-lg hover:bg-amber-400 transition duration-200 text-lg"
+          >
+            Calculator
+          </button>
         </div>
       </div>
     </div>

@@ -16,6 +16,7 @@ My Apps is a full-stack web application designed to showcase app development ski
 - **Weather Dashboard**: Fetch real-time weather data via API integration.
 - **Notes Page**: Create, edit, and organize personal notes.
 - **Interactive Forum**: A platform for users to ask questions and collaborate.
+- **Enhanced Authentication**: Email verification and other opttions for enhanced auth experience.
 
 ---
 

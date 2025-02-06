@@ -15,6 +15,7 @@ import ProfileManager from './components/ProfileManager';
 import LoginPage from './pages/LoginPage';
 import AvatarPage from './pages/AvatarPage';
 import WelcomePage from './pages/WelcomePage';
+import Calculator from './pages/Calculator';
 import { history } from './utils/history';
 import { navigateTo } from './utils/navigation';
 
@@ -302,6 +303,15 @@ function App() {
             element={
               <ProtectedRoute user={user} authLoading={authLoading}>
                 <ProfileManager />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            exact
+            path="/calc"
+            element={
+              <ProtectedRoute user={user} authLoading={authLoading}>
+                <Calculator />
               </ProtectedRoute>
             }
           />
