@@ -16,6 +16,7 @@ import LoginPage from './pages/LoginPage';
 import AvatarPage from './pages/AvatarPage';
 import WelcomePage from './pages/WelcomePage';
 import Calculator from './pages/Calculator';
+import WeatherDashboard from './components/WeatherDashboard';
 import { history } from './utils/history';
 import { navigateTo } from './utils/navigation';
 
@@ -312,6 +313,15 @@ function App() {
             element={
               <ProtectedRoute user={user} authLoading={authLoading}>
                 <Calculator />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            exact
+            path="/weather"
+            element={
+              <ProtectedRoute user={user} authLoading={authLoading}>
+                <WeatherDashboard />
               </ProtectedRoute>
             }
           />

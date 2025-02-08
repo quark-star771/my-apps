@@ -45,6 +45,12 @@ const HomePage = () => {
           >
             Calculator
           </button>
+          <button
+            onClick={() => navigateTo('/weather')}
+            className="w-full bg-blue-600 text-white py-3 px-5 rounded-lg hover:bg-sky-400 transition duration-200 text-lg"
+          >
+            Weather Dashboard
+          </button>
         </div>
       </div>
     </div>

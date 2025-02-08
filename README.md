@@ -38,8 +38,11 @@ My Apps is a full-stack web application designed to showcase app development ski
 
 ### Prerequisites
 - Node.js installed on your machine.
+- Firebase CLI installed globally (optional, for deploying functions).
+- An OpenWeather API key (you’ll need to set this up locally for the app to function).
 
 ### Steps
+
 1. Clone the repository:
    ```bash
    git clone https://github.com/username/my-apps.git
@@ -62,16 +65,27 @@ My Apps is a full-stack web application designed to showcase app development ski
    npm install
    ```
 
-5. Run the frontend:
+5. Set up your environment variables:
+   - Create an `.env` file in the `client` directory.
+   - Add your OpenWeather API key like this:
+     ```
+     REACT_APP_API_KEY=your_openweather_api_key
+     ```
+   - Optionally, configure any additional environment variables needed for Firebase or other services.
+
+6. Run the frontend:
    ```bash
    cd ../client
    npm start
    ```
 
-6. Deploy Firebase Cloud Functions (optional):
+7. (Optional) Deploy Firebase Cloud Functions:
    ```bash
    firebase deploy --only functions
    ```
+
+### Note
+To run this app locally, you’ll need to configure your own `.env` file with the necessary API keys and environment variables. Without this configuration, the app will not function as expected.
 
 ---
 
