@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { evaluate } from "mathjs";
+import { navigateTo } from "../utils/navigation";
 
 const Calculator = () => {
   const [input, setInput] = useState("");
@@ -58,6 +59,13 @@ const Calculator = () => {
 
   return (
     <div className="min-h-screen bg-amber-300 text-white flex flex-col items-center justify-center p-5 animate-fadeIn">
+    {/* Home Button */}
+    <button
+      onClick={() => navigateTo('/')}
+      className="fixed top-4 left-4 p-2 bg-blue-500 text-white rounded hover:bg-blue-600 z-50"
+    >
+      🏠
+    </button>
       <div className="flex flex-col items-center bg-orange-100 p-4 rounded-lg shadow-lg w-fit">
         <div className="w-80 bg-gray-800 p-4 rounded-lg shadow-md">
           <div className="mb-4 p-4 bg-gray-700 text-right text-2xl rounded-lg shadow-inner backdrop-blur-lg bg-opacity-50">

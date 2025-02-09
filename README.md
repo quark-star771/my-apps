@@ -10,10 +10,11 @@ My Apps is a full-stack web application designed to showcase app development ski
 - **User Authentication**: Secure login and registration using Firebase Authentication.
 - **Avatar Creator**: Allows users to customize and save their personal avatars.
 - **Welcome and Home Pages**: Intuitive and engaging user interface for navigation.
+- **Calculator**: A simple and responsive calculator, supporting basic arithmetic operations.
+- **Weather Dashboard**: A dynamic weather dashboard that fetches real-time data, displaying current conditions and a 5-day forecast.
+- **Notes Page**: Create, edit, and organize personal notes.
 
 ### Future Aspirations
-- **Weather Dashboard**: Fetch real-time weather data via API integration.
-- **Notes Page**: Create, edit, and organize personal notes.
 - **Interactive Forum**: A platform for users to ask questions and collaborate.
 - **Navigate bar**: Add a navigate bar and menus.
 - **Enhanced Authentication**: Email verification and other opttions for enhanced auth experience.
@@ -86,11 +87,6 @@ My Apps is a full-stack web application designed to showcase app development ski
 
 ### Note
 To run this app locally, you’ll need to configure your own `.env` file with the necessary API keys and environment variables. Without this configuration, the app will not function as expected.
-
----
-
-## Future Plans
-This project is a work in progress, with plans to implement additional features like a calculator, weather dashboard, notes page, and an interactive forum. Stay tuned for updates!
 
 ---
 

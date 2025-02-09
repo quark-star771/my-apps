@@ -106,6 +106,13 @@ const AvatarPage = ({ internalData, saveInternalData }) => {
 
     return (
         <div className="min-h-screen bg-teal-300 flex flex-col items-center p-5">
+        {/* Home Button */}
+            <button
+              onClick={() => navigateTo('/')}
+              className="fixed top-4 left-4 p-2 bg-blue-500 text-white rounded hover:bg-blue-600 z-50"
+            >
+              🏠
+            </button>
             <div className="bg-green-50 p-8 rounded-lg shadow-lg w-full max-w-4xl">
                 <h2 className="text-center text-2xl font-bold mb-6">Customize Your Avatar</h2>
                 

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { navigateTo } from "../utils/navigation";
 
 const WeatherDashboard = () => {
   const [city, setCity] = useState("");
@@ -104,6 +105,13 @@ const WeatherDashboard = () => {
 
   return (
     <div className="min-h-screen bg-cyan-300 text-gray-800 flex flex-col items-center justify-center p-5 animate-fadeIn">
+    {/* Home Button */}
+    <button
+      onClick={() => navigateTo('/')}
+      className="fixed top-4 left-4 p-2 bg-blue-500 text-white rounded hover:bg-blue-600 z-50"
+    >
+      🏠
+    </button>
       <div className="flex flex-col items-center bg-green-400 p-4 rounded-lg shadow-lg w-full max-w-lg">
         <h1 className="text-3xl font-bold mb-6">Weather Dashboard</h1>
         <div className="flex flex-col items-center bg-white p-6 rounded-lg shadow-lg w-full">
@@ -152,18 +160,48 @@ const WeatherDashboard = () => {
           </button>
           {error && <p className="text-red-500 mt-4">{error}</p>}
           {weather && (
-            <div className="mt-6 text-center w-full">
-              <h2 className="text-2xl font-semibold">
-                {displayCity} ({country})
-              </h2>
-              <p className="text-lg">{weather.current.weather[0].description}</p>
-              <p className="text-4xl font-bold">
-                {Math.round(weather.current.temp)}°F
-              </p>
-              <p className="text-sm">Humidity: {weather.current.humidity}%</p>
-              <p className="text-sm">Wind: {weather.current.wind_speed} mph</p>
-            </div>
-          )}
+  <div className="mt-6 text-center w-full">
+    {/* Current Weather */}
+    <h2 className="text-2xl font-semibold">
+      {displayCity} ({country})
+    </h2>
+    <p className="text-lg">{weather.current.weather[0].description}</p>
+    <p className="text-4xl font-bold">
+      {Math.round(weather.current.temp)}°F
+    </p>
+    <p className="text-sm">Humidity: {weather.current.humidity}%</p>
+    <p className="text-sm">Wind: {weather.current.wind_speed} mph</p>
+
+    {/* 5-Day Forecast */}
+    <div className="mt-6">
+      <h3 className="text-xl font-semibold mb-4">5-Day Forecast</h3>
+      <div className="grid grid-cols-1 sm:grid-cols-5 gap-4">
+        {weather.daily.slice(0, 5).map((day, index) => (
+          <div
+            key={index}
+            className="p-4 bg-gray-200 rounded-lg shadow-md text-center"
+          >
+            <p className="font-semibold">
+              {new Date(day.dt * 1000).toLocaleDateString(undefined, {
+                weekday: "short",
+              })}
+            </p>
+            <img
+              src={`https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`}
+              alt={day.weather[0].description}
+              className="mx-auto"
+            />
+            <p className="text-lg font-bold">
+              {Math.round(day.temp.max)}°F / {Math.round(day.temp.min)}°F
+            </p>
+            <p className="text-sm">{day.weather[0].description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+)}
+
         </div>
       </div>
     </div>

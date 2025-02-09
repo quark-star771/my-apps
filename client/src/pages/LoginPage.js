@@ -95,6 +95,13 @@ const LoginPage = ({ setStayLoggedIn, stayLoggedIn, setInternalData, setUser, se
 
   return (
     <div className="min-h-screen bg-teal-300 flex flex-col items-center p-5">
+    {/* Home Button */}
+    <button
+      onClick={() => navigateTo('/')}
+      className="fixed top-4 left-4 p-2 bg-blue-500 text-white rounded hover:bg-blue-600 z-50"
+    >
+      🏠
+    </button>
       {auth.currentUser ? (
         <div className="bg-green-50 p-8 rounded-lg shadow-lg w-full max-w-4xl">
           <h1 className="text-2xl font-bold text-center mb-6">Welcome Back!</h1>

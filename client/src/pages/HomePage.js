@@ -21,12 +21,15 @@ const HomePage = () => {
           >
             Login Page
           </button>
+          {/*
+          ** Hiding for now, will implement admin approach on next round.
           <button
             onClick={() => navigateTo('/profile-manager')}
             className="w-full bg-green-600 text-white py-3 px-5 rounded-lg hover:bg-green-700 transition duration-200 text-lg"
           >
             Profile Manager
           </button>
+          */}
           <button
             onClick={() => navigateTo('/profile-setup')}
             className="w-full bg-purple-600 text-white py-3 px-5 rounded-lg hover:bg-purple-700 transition duration-200 text-lg"
@@ -41,15 +44,21 @@ const HomePage = () => {
           </button>
           <button
             onClick={() => navigateTo('/calc')}
-            className="w-full bg-amber-700 text-white py-3 px-5 rounded-lg hover:bg-amber-400 transition duration-200 text-lg"
+            className="w-full bg-amber-400 text-white py-3 px-5 rounded-lg hover:bg-amber-600 transition duration-200 text-lg"
           >
             Calculator
           </button>
           <button
             onClick={() => navigateTo('/weather')}
-            className="w-full bg-blue-600 text-white py-3 px-5 rounded-lg hover:bg-sky-400 transition duration-200 text-lg"
+            className="w-full bg-cyan-300 text-white py-3 px-5 rounded-lg hover:bg-sky-400 transition duration-200 text-lg"
           >
             Weather Dashboard
+          </button>
+          <button
+            onClick={() => navigateTo('/notes')}
+            className="w-full bg-fuchsia-600 text-white py-3 px-5 rounded-lg hover:bg-fuchsia-800 transition duration-200 text-lg"
+          >
+            Notes Page
           </button>
         </div>
       </div>

@@ -17,6 +17,7 @@ import AvatarPage from './pages/AvatarPage';
 import WelcomePage from './pages/WelcomePage';
 import Calculator from './pages/Calculator';
 import WeatherDashboard from './components/WeatherDashboard';
+import NotesPage from './pages/NotesPage'
 import { history } from './utils/history';
 import { navigateTo } from './utils/navigation';
 
@@ -322,6 +323,15 @@ function App() {
             element={
               <ProtectedRoute user={user} authLoading={authLoading}>
                 <WeatherDashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            exact
+            path="/notes"
+            element={
+              <ProtectedRoute user={user} authLoading={authLoading}>
+                <NotesPage />
               </ProtectedRoute>
             }
           />
