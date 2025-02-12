@@ -58,7 +58,7 @@ const Calculator = () => {
   }, [handleCalculate]); // min-h-screen bg-teal-300 flex flex-col items-center p-5
 
   return (
-    <div className="min-h-screen bg-amber-300 text-white flex flex-col items-center justify-center p-5 animate-fadeIn">
+    <div className="min-h-screen bg-emerald-300 text-white flex flex-col items-center justify-center p-5 animate-fadeIn">
     {/* Home Button */}
     <button
       onClick={() => navigateTo('/')}

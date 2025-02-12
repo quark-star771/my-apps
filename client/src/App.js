@@ -11,13 +11,15 @@ import { auth } from "./firebase-config";
 
 import HomePage from './pages/HomePage';
 import ProfileSetup from './components/ProfileSetup';
-import ProfileManager from './components/ProfileManager';
+// import ProfileManager from './components/ProfileManager';
 import LoginPage from './pages/LoginPage';
 import AvatarPage from './pages/AvatarPage';
 import WelcomePage from './pages/WelcomePage';
 import Calculator from './pages/Calculator';
 import WeatherDashboard from './components/WeatherDashboard';
-import NotesPage from './pages/NotesPage'
+import NotesPage from './pages/NotesPage';
+import ForumPage from './pages/ForumPage';
+import ThreadPage from './pages/ThreadPage';
 import { history } from './utils/history';
 import { navigateTo } from './utils/navigation';
 
@@ -51,14 +53,14 @@ function App() {
   const [errorMessage, setErrorMessage] = useState("");
   const [waitTime, setWaitTime] = useState(0);
   
-  // An fancy attempt at a wait function, due to useEffect weirdness it acts as a pause if getMs > 0.
-  // Still using this pause aspect to my advantage.
+  // An  attempt at a wait function, due to useEffect caching it acts as a pause if getMs > 0.
+  // I am, however, still using this pause functionality to my advantage.
   const wait = async (getMs) => {
-    let remainingTime = getMs(); // Get initial time
+    let remainingTime = getMs();
     while (remainingTime > 0) {
-      const step = Math.min(remainingTime, 100); // Poll every 100ms or less
-      await new Promise((resolve) => setTimeout(resolve, step)); // Wait
-      remainingTime = getMs(); // Re-check the time dynamically
+      const step = Math.min(remainingTime, 100);
+      await new Promise((resolve) => setTimeout(resolve, step));
+      remainingTime = getMs();
     }
   };
 
@@ -200,9 +202,9 @@ function App() {
         // Reset variables just in case
         setUser(null);
         setAuthLoading(false);
-        // Navigate to welcome, use of wait time here is because
-        // there is a delay on sign-up auth to db which caused it to
-        // route to welcome for a few seconds before continuing.
+        // Navigate to welcome.
+        // Using wait here as there is a needed delay on sign-up between firebase to db,
+        // which caused it to route to welcome for a few seconds before continuing.
         // This prevents that.
         if (waitTime === 0)
             navigateTo('/welcome');
@@ -271,7 +273,9 @@ function App() {
             path="/"
             element={
               <ProtectedRoute user={user} authLoading={authLoading}>
-                <HomePage />
+                <HomePage
+                  internalData={internalData}
+                />
               </ProtectedRoute>
             }
           />
@@ -299,6 +303,8 @@ function App() {
               </ProtectedRoute>
             }
           />
+          {/*
+              ** Removing route for now, will add admin functionality later.
           <Route
             exact
             path="/profile-manager"
@@ -308,6 +314,7 @@ function App() {
               </ProtectedRoute>
             }
           />
+          */}
           <Route
             exact
             path="/calc"
@@ -332,6 +339,28 @@ function App() {
             element={
               <ProtectedRoute user={user} authLoading={authLoading}>
                 <NotesPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            exact
+            path="/forum"
+            element={
+              <ProtectedRoute user={user} authLoading={authLoading}>
+                <ForumPage
+                  internalData={internalData}
+                />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            exact
+            path="/thread/:threadId"
+            element={
+              <ProtectedRoute user={user} authLoading={authLoading}>
+                <ThreadPage
+                  internalData={internalData}
+                />
               </ProtectedRoute>
             }
           />

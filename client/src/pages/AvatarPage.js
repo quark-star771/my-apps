@@ -113,7 +113,7 @@ const AvatarPage = ({ internalData, saveInternalData }) => {
             >
               🏠
             </button>
-            <div className="bg-green-50 p-8 rounded-lg shadow-lg w-full max-w-4xl">
+            <div className="bg-green-50 p-8 mt-12 rounded-lg shadow-lg w-full max-w-4xl">
                 <h2 className="text-center text-2xl font-bold mb-6">Customize Your Avatar</h2>
                 
                 <div className="mb-6 text-center">

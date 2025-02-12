@@ -13,10 +13,13 @@ My Apps is a full-stack web application designed to showcase app development ski
 - **Calculator**: A simple and responsive calculator, supporting basic arithmetic operations.
 - **Weather Dashboard**: A dynamic weather dashboard that fetches real-time data, displaying current conditions and a 5-day forecast.
 - **Notes Page**: Create, edit, and organize personal notes.
+- **Interactive Forum**: A platform for users to ask questions and collaborate.
 
 ### Future Aspirations
-- **Interactive Forum**: A platform for users to ask questions and collaborate.
-- **Navigate bar**: Add a navigate bar and menus.
+- **Navigate bar**: Add a navigate bar and additional menus.
+- **Profile Viewing**: Add the ability to view profiles for others.
+- **QOL Improvements**: There are numerous places for minor improvements.
+- **Admin Functionality**: Add admin tools to help manage users and site settings.
 - **Enhanced Authentication**: Email verification and other opttions for enhanced auth experience.
 
 ---

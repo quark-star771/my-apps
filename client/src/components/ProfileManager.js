@@ -77,7 +77,7 @@ const ProfileManager = () => {
           </div>
         ) : (
           profiles.map((profile) => (
-            <div 
+            <div
               key={profile.id}
               className="bg-white shadow-md rounded-lg p-6 mb-4"
             >
@@ -86,17 +86,7 @@ const ProfileManager = () => {
                   <div class="flex justify-center">
                       <Avatar
                           style={{ width: '150px', height: '150px' }}
-                          avatarStyle={JSON.parse(profile.avatar_url).avatarStyle}
-                          topType={JSON.parse(profile.avatar_url).topType}
-                          accessoriesType={JSON.parse(profile.avatar_url).accessoriesType}
-                          hairColor={JSON.parse(profile.avatar_url).hairColor}
-                          facialHairType={JSON.parse(profile.avatar_url).facialHairType}
-                          clotheType={JSON.parse(profile.avatar_url).clotheType}
-                          clotheColor={JSON.parse(profile.avatar_url).clotheColor}
-                          eyeType={JSON.parse(profile.avatar_url).eyeType}
-                          eyebrowType={JSON.parse(profile.avatar_url).eyebrowType}
-                          mouthType={JSON.parse(profile.avatar_url).mouthType}
-                          skinColor={JSON.parse(profile.avatar_url).skinColor}
+                          {...JSON.parse(profile.avatar_url)}
                       />
                   </div>
               </div>
