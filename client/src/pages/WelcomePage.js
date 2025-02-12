@@ -5,7 +5,9 @@ const WelcomePage = () => {
     return (
         <div className="bg-custom min-h-screen flex flex-col justify-between">
             <div className="text-center mt-8">
-                <h1 className="text-6xl font-bold text-white neon-text">Welcome to My Apps</h1>
+                <h1 className="text-6xl font-bold text-white neon-text">Welcome to</h1>
+                <p className="pt-4"></p>
+                <h1 className="text-7xl font-bold text-emerald-50 neon-text">My Apps</h1>
             </div>
             <div className="text-center mb-8">
                 <p className="text-5xl font-bold text-white neon-text mb-6">Let's make life a little easier.</p>

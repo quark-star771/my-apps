@@ -103,6 +103,14 @@ const WeatherDashboard = () => {
     }
   };
 
+  const clearData = () => {
+    setCity("");
+    setDisplayCity("");
+    setState("");
+    setZip("");
+    setWeather("");
+  }
+
   return (
     <div className="min-h-screen bg-cyan-300 text-gray-800 flex flex-col items-center justify-center p-5 animate-fadeIn">
     {/* Home Button */}
@@ -115,6 +123,7 @@ const WeatherDashboard = () => {
       <div className="flex flex-col items-center bg-green-400 p-4 rounded-lg shadow-lg w-full max-w-lg">
         <h1 className="text-3xl font-bold mb-6">Weather Dashboard</h1>
         <div className="flex flex-col items-center bg-white p-6 rounded-lg shadow-lg w-full">
+          <h1 className="text-1xl font-bold mb-6">(Search by City/State or Zip Code.)</h1>
           <div className="flex flex-col sm:flex-row gap-4 mb-4 w-full">
             <input
               type="text"
@@ -157,6 +166,13 @@ const WeatherDashboard = () => {
             className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-sky-400 transition w-full"
           >
             Get Weather
+          </button>
+          <p className="pt-2"></p>
+          <button
+            onClick={clearData}
+            className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition w-full"
+          >
+            Clear Search
           </button>
           {error && <p className="text-red-500 mt-4">{error}</p>}
           {weather && (
