@@ -2,6 +2,10 @@
 
 My Apps is a full-stack web application designed to showcase app development skills, featuring a React-based frontend and Firebase-powered backend. It includes essential functionality for user authentication, avatar creation, and user-friendly welcome and home pages. This project highlights versatility and technical proficiency across both frontend and backend development.
 
+Check out the deployed production version at the link below and drop a comment in the forums!
+
+[My Apps Production](https://my-apps-a1d3c.web.app/).
+
 ---
 
 ## Features
