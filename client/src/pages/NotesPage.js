@@ -92,6 +92,7 @@ const NotesPage = () => {
 
   // Save notes for existing page or crate new page
   const saveNotePage = async () => {
+    setLoading(true);
     if (!selectedPage) {
       const response = await fetch(
         "https://us-central1-my-apps-a1d3c.cloudfunctions.net/addNotePage",
@@ -128,6 +129,7 @@ const NotesPage = () => {
       );
       setNotesPages(updatedPages);
     }
+    setLoading(false);
   };
 
   // Delete page
