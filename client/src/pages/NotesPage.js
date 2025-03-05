@@ -116,13 +116,14 @@ const NotesPage = () => {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             notePageId: selectedPage.id,
+            title: pageTitle,
             content: content.split("\n"),
           }),
         }
       );
       const updatedPages = notesPages.map((page) =>
         page.id === selectedPage.id
-          ? { ...page, content: content.split("\n") }
+          ? { ...page, content: content.split("\n"), title: pageTitle }
           : page
       );
       setNotesPages(updatedPages);
@@ -250,7 +251,7 @@ const NotesPage = () => {
                 value={pageTitle}
                 onChange={(e) => setPageTitle(e.target.value)}
                 className="p-2 border border-gray-300 rounded flex-grow"
-                disabled={!selectedPage?.editable}
+                disabled={selectedPage ? !selectedPage.editable : false}
               />
               <button
                 onClick={() =>

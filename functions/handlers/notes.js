@@ -49,13 +49,13 @@ exports.getNotesPages = functions.https.onRequest(async (req, res) => {
 // Update a note page (add/delete notes)
 exports.updateNotePage = functions.https.onRequest(async (req, res) => {
   cors(req, res, async () => {
-    const {notePageId, content} = req.body;
+    const {notePageId, title, content} = req.body;
     if (!notePageId || !Array.isArray(content)) {
       return res.status(400).send({error: 'Missing required fields: notePageId or content array.'});
     }
 
     try {
-      await dbAppData.collection('notes').doc(notePageId).update({content});
+      await dbAppData.collection('notes').doc(notePageId).update({title, content});
       return res.status(200).send({message: 'Note page updated successfully.'});
     } catch (err) {
       console.error('Error updating note page:', err);

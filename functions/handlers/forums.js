@@ -141,7 +141,7 @@ exports.updateComment = functions.https.onRequest(async (req, res) => {
 
       // Update the comment
       await commentRef.update({
-        content: content, // Match the frontend request
+        content: content,
         updatedAt: admin.firestore.FieldValue.serverTimestamp(),
       });
 

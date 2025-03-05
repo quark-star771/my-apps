@@ -111,6 +111,10 @@ const WeatherDashboard = () => {
     setWeather("");
   }
 
+  const capitalizeWords = (str) => {
+    return str.replace(/\b\w/g, (char) => char.toUpperCase());
+  };
+
   return (
     <div className="min-h-screen bg-cyan-300 text-gray-800 flex flex-col items-center justify-center p-5 animate-fadeIn">
     {/* Home Button */}
@@ -176,48 +180,47 @@ const WeatherDashboard = () => {
           </button>
           {error && <p className="text-red-500 mt-4">{error}</p>}
           {weather && (
-  <div className="mt-6 text-center w-full">
-    {/* Current Weather */}
-    <h2 className="text-2xl font-semibold">
-      {displayCity} ({country})
-    </h2>
-    <p className="text-lg">{weather.current.weather[0].description}</p>
-    <p className="text-4xl font-bold">
-      {Math.round(weather.current.temp)}°F
-    </p>
-    <p className="text-sm">Humidity: {weather.current.humidity}%</p>
-    <p className="text-sm">Wind: {weather.current.wind_speed} mph</p>
+            <div className="mt-6 text-center w-full">
+              {/* Current Weather */}
+              <h2 className="text-2xl font-semibold">
+                {displayCity} ({country})
+              </h2>
+              <p className="text-lg">{capitalizeWords(weather.current.weather[0].description)}</p>
+              <p className="text-4xl font-bold">
+                {Math.round(weather.current.temp)}°F
+              </p>
+              <p className="text-sm">Humidity: {weather.current.humidity}%</p>
+              <p className="text-sm">Wind: {weather.current.wind_speed} mph</p>
 
-    {/* 5-Day Forecast */}
-    <div className="mt-6">
-      <h3 className="text-xl font-semibold mb-4">5-Day Forecast</h3>
-      <div className="grid grid-cols-1 sm:grid-cols-5 gap-4">
-        {weather.daily.slice(0, 5).map((day, index) => (
-          <div
-            key={index}
-            className="p-4 bg-gray-200 rounded-lg shadow-md text-center"
-          >
-            <p className="font-semibold">
-              {new Date(day.dt * 1000).toLocaleDateString(undefined, {
-                weekday: "short",
-              })}
-            </p>
-            <img
-              src={`https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`}
-              alt={day.weather[0].description}
-              className="mx-auto"
-            />
-            <p className="text-lg font-bold">
-              {Math.round(day.temp.max)}°F / {Math.round(day.temp.min)}°F
-            </p>
-            <p className="text-sm">{day.weather[0].description}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-)}
-
+              {/* 5-Day Forecast */}
+              <div className="mt-6">
+                <h3 className="text-xl font-semibold mb-4">5-Day Forecast</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-5 gap-4">
+                  {weather.daily.slice(0, 5).map((day, index) => (
+                    <div
+                      key={index}
+                      className="p-4 bg-gray-200 rounded-lg shadow-md text-center"
+                    >
+                      <p className="font-semibold">
+                        {new Date(day.dt * 1000).toLocaleDateString(undefined, {
+                          weekday: "short",
+                        })}
+                      </p>
+                      <img
+                        src={`https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`}
+                        alt={day.weather[0].description}
+                        className="mx-auto"
+                      />
+                      <p className="text-lg font-bold">
+                        {Math.round(day.temp.max)}°F / {Math.round(day.temp.min)}°F
+                      </p>
+                      <p className="text-sm">{capitalizeWords(day.weather[0].description)}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
