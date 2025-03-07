@@ -195,7 +195,7 @@ const NotesPage = () => {
       🏠
     </button>
       <div
-        className="flex flex-col items-center bg-yellow-100 p-4 rounded-lg shadow-lg w-full max-w-lg relative"
+        className="flex flex-col items-center bg-yellow-100 p-4 rounded-lg shadow-lg w-full relative"
         style={{ height: "80vh" }}
       >
         <h1 className="text-3xl font-bold mb-6">Notes</h1>
